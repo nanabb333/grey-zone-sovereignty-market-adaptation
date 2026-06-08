@@ -123,9 +123,6 @@ def main():
     market_to_save["date"] = market_to_save["date"].dt.strftime("%Y-%m-%d")
     market_to_save.to_csv(ABNORMAL_RETURN_FILE, index=False)
 
-    # Also write a compatibility copy for earlier draft scripts.
-    market_to_save.to_csv("data/market_abnormal_returns.csv", index=False)
-
     # Calculate and save event-window summaries.
     events = load_events()
     event_summary = calculate_event_summary(market, events)

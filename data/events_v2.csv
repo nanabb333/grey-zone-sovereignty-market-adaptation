@@ -1,5 +1,0 @@
-date,event_name,event_category,military_risk,diplomatic_risk,sanctions_risk,semiconductor_relevance,ai_relevance,security_relevance,surprise_level,event_repetition,confidence_level,source
-2022-08-02,Pelosi Visit,diplomatic,3,5,2,3,1,5,2,1,TBD,TBD
-2023-04-08,Joint Sword 2023,military,4,3,1,3,1,5,1,2,TBD,TBD
-2024-05-23,Joint Sword-2024A,military,4,4,1,3,1,5,1,3,TBD,TBD
-2024-10-14,Joint Sword-2024B,military,4,4,1,3,1,5,1,4,TBD,TBD

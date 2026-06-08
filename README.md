@@ -58,6 +58,12 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 └── .gitignore
 ```
 
+## Full Dissertation
+
+The full dissertation manuscript is available at:
+
+[Grey-Zone-Sovereignty-and-Market-Adaptation.pdf](paper/Grey-Zone-Sovereignty-and-Market-Adaptation.pdf)
+
 ## Main Findings
 
 - Risk events are negative on average.
@@ -69,6 +75,12 @@ Daily market data are collected with `yfinance`. The analysis calculates daily r
 ## Key Figure
 
 ![Average cumulative abnormal returns by event type](figures/average_car_by_event_type.png)
+
+## Results Outputs
+
+- `figures/average_car_by_event_type.png`: summarizes average cumulative abnormal returns by event classification.
+- `figures/event_level_car_scatter.png`: shows event-level variation in TWSE and TSMC cumulative abnormal returns.
+- `results/event_abnormal_return_summary.csv`: reports event-window abnormal-return and CAR results used in the analysis.
 
 ## Limitations
 

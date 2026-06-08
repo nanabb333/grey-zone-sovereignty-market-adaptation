@@ -81,9 +81,6 @@ def main():
     # Save the cleaned market dataset.
     market.to_csv(OUTPUT_FILE, index=False)
 
-    # Also write a root-level compatibility copy for older draft scripts.
-    market.to_csv("data/market.csv", index=False)
-
     # Print the cleaned dataset date range.
     print(f"Date range: {market['date'].min()} to {market['date'].max()}")
 
