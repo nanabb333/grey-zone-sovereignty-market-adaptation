@@ -22,7 +22,7 @@ Political risk analysts, financial research teams, and business analytics stakeh
 
 This project transforms a manual Taiwan geopolitical-risk event study into an automated analytics engine.
 
-The engine reads standardized event inputs, loads market data, calculates returns, calculates benchmark-adjusted abnormal returns, calculates cumulative abnormal return (CAR), and generates reusable CSV, figure, and Markdown report outputs.
+The engine reads standardised event inputs, loads market data, calculates returns, calculates benchmark-adjusted abnormal returns, calculates cumulative abnormal return (CAR), and generates reusable CSV, figure, and Markdown report outputs.
 
 Repo 2 is designed as an analytics product, not a research paper.
 
@@ -74,7 +74,7 @@ Write run summary
 | Input | Path | Purpose |
 |---|---|---|
 | Event input | `events/events.csv` | Defines events, assets, benchmarks, and event windows |
-| Market data | `data/market_data.csv` | Standardized market price data used by the engine |
+| Market data | `data/market_data.csv` | Standardised market price data used by the engine |
 
 Current event schema:
 
@@ -146,7 +146,7 @@ Raw CAR is not yet implemented as a separate output field. It is planned as a fu
 
 The engine records a status for each event in `results/event_results.csv`.
 
-Current status behavior:
+Current status behaviour:
 
 - `success`: the event processed successfully
 - `failed`: the event failed, but the batch continued
@@ -163,7 +163,7 @@ results/dashboard_data.csv
 results/executive_summary.md
 ```
 
-`results/mechanism_summary.csv` summarizes `car_value` by mechanism using successful events for CAR statistics and counting failed events separately.
+`results/mechanism_summary.csv` summarises `car_value` by mechanism using successful events for CAR statistics and counting failed events separately.
 
 `results/dashboard_data.csv` and `results/executive_summary.md` translate the batch outputs into dashboard-ready and business-facing formats.
 
@@ -184,7 +184,7 @@ failed_event_count
 V3 adds two business-facing outputs without changing the core CAR calculation:
 
 - `results/dashboard_data.csv` converts the master event results into a dashboard-friendly table with `car_percent`, `car_direction`, event status, and links to generated artifacts.
-- `results/executive_summary.md` summarizes the batch run for non-technical readers, including event counts, strongest positive and negative events, mechanism-level results, and a non-investment-advice note.
+- `results/executive_summary.md` summarises the batch run for non-technical readers, including event counts, strongest positive and negative events, mechanism-level results, and a non-investment-advice note.
 
 These files are designed to support a future Repo 3 dashboard or analytics interface.
 
