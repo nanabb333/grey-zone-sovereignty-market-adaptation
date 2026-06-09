@@ -1,0 +1,5 @@
+event_id,event_name,event_date,mechanism,event_type,asset,benchmark,car_value,car_percent,car_direction,status,report_path,figure_path,event_window_path
+E001,Pelosi Visit,2022-08-02,Risk,Diplomatic Shock,TSMC,SOX,0.0044332006595363,0.44332006595363,Positive,success,reports/E001_report.md,figures/E001_abnormal_returns.png,results/event_windows/E001_event_window_data.csv
+E002,Joint Sword 2023,2023-04-08,Risk,Military Demonstration,TSMC,SOX,-0.0065243053328469,-0.65243053328469,Negative,success,reports/E002_report.md,figures/E002_abnormal_returns.png,results/event_windows/E002_event_window_data.csv
+E003,Joint Sword 2024A,2024-05-23,Risk,Military Demonstration,TSMC,SOX,-0.0054448613183898,-0.54448613183898,Negative,success,reports/E003_report.md,figures/E003_abnormal_returns.png,results/event_windows/E003_event_window_data.csv
+E004,NVIDIA Taiwan AI Factory,2025-05-19,Strategic_Importance,Strategic Investment,TSMC,SOX,-0.0176057315529649,-1.7605731552964898,Negative,success,reports/E004_report.md,figures/E004_abnormal_returns.png,results/event_windows/E004_event_window_data.csv

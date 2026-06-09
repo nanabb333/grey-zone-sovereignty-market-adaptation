@@ -28,7 +28,7 @@ Repo 2 is designed as an analytics product, not a research paper.
 
 ## Current Status
 
-V2 multi-event batch processing is implemented.
+V3 dashboard-ready analytics outputs are implemented on top of the V2 multi-event engine.
 
 The engine currently:
 
@@ -38,6 +38,8 @@ The engine currently:
 - records success or failure for each event
 - continues processing after event-level failures
 - writes a run summary after each batch execution
+- writes dashboard-ready event data
+- writes a non-technical executive summary
 
 ## Workflow
 
@@ -59,6 +61,10 @@ FOR EACH EVENT
 Write master results table
 ↓
 Write mechanism summary
+↓
+Write dashboard data
+↓
+Write executive summary
 ↓
 Write run summary
 ```
@@ -82,6 +88,8 @@ event_id,event_name,event_date,mechanism,event_type,asset,benchmark,event_window
 |---|---|---|
 | Master event results | `results/event_results.csv` | One row per processed event |
 | Mechanism summary | `results/mechanism_summary.csv` | Portfolio-level CAR summary by mechanism |
+| Dashboard data | `results/dashboard_data.csv` | Dashboard-ready event table with CAR percent, direction, status, and output paths |
+| Executive summary | `results/executive_summary.md` | Non-technical batch summary for business-facing review |
 | Event-window data | `results/event_windows/{event_id}_event_window_data.csv` | Daily event-window returns and abnormal returns |
 | Event figures | `figures/{event_id}_abnormal_returns.png` | Per-event abnormal return figure |
 | Event reports | `reports/{event_id}_report.md` | Per-event analyst-facing Markdown report |
@@ -101,7 +109,7 @@ Example:
 
 [reports/E001_report.md](reports/E001_report.md)
 
-## How to Run V2
+## How to Run the Current Engine
 
 Install dependencies:
 
@@ -151,9 +159,13 @@ The engine also generates:
 
 ```text
 results/mechanism_summary.csv
+results/dashboard_data.csv
+results/executive_summary.md
 ```
 
-This file summarizes `car_value` by mechanism using successful events for CAR statistics and counting failed events separately.
+`results/mechanism_summary.csv` summarizes `car_value` by mechanism using successful events for CAR statistics and counting failed events separately.
+
+`results/dashboard_data.csv` and `results/executive_summary.md` translate the batch outputs into dashboard-ready and business-facing formats.
 
 Current mechanism summary fields:
 
@@ -166,6 +178,15 @@ max_car_value
 successful_event_count
 failed_event_count
 ```
+
+## V3 Dashboard-Ready Analytics Layer
+
+V3 adds two business-facing outputs without changing the core CAR calculation:
+
+- `results/dashboard_data.csv` converts the master event results into a dashboard-friendly table with `car_percent`, `car_direction`, event status, and links to generated artifacts.
+- `results/executive_summary.md` summarizes the batch run for non-technical readers, including event counts, strongest positive and negative events, mechanism-level results, and a non-investment-advice note.
+
+These files are designed to support a future Repo 3 dashboard or analytics interface.
 
 ## Skills Demonstrated
 

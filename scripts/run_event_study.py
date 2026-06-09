@@ -10,6 +10,8 @@ from results_writer import (
     initialize_event_results,
     save_event_results,
     save_failed_event_result,
+    write_dashboard_data,
+    write_executive_summary,
     write_mechanism_summary,
     write_run_summary,
 )
@@ -205,9 +207,13 @@ def main():
             save_failed_event_result(event, error_message)
 
     mechanism_summary_path = write_mechanism_summary()
+    dashboard_data_path = write_dashboard_data()
+    executive_summary_path = write_executive_summary()
     run_summary_path = write_run_summary()
     print()
     print(f"Mechanism summary saved to {mechanism_summary_path}")
+    print(f"Dashboard data saved to {dashboard_data_path}")
+    print(f"Executive summary saved to {executive_summary_path}")
     print(f"Run summary saved to {run_summary_path}")
 
 

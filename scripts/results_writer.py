@@ -7,6 +7,8 @@ RESULTS_FILE = Path("results/event_results.csv")
 EVENT_WINDOWS_DIR = Path("results/event_windows")
 RUN_SUMMARY_FILE = Path("results/run_summary.md")
 MECHANISM_SUMMARY_FILE = Path("results/mechanism_summary.csv")
+DASHBOARD_DATA_FILE = Path("results/dashboard_data.csv")
+EXECUTIVE_SUMMARY_FILE = Path("results/executive_summary.md")
 
 
 RESULT_COLUMNS = [
@@ -156,6 +158,8 @@ def write_run_summary():
 
 - results/event_results.csv
 - results/mechanism_summary.csv
+- results/dashboard_data.csv
+- results/executive_summary.md
 - results/event_windows/
 - reports/
 - figures/
@@ -215,3 +219,154 @@ def write_mechanism_summary():
     mechanism_summary.to_csv(MECHANISM_SUMMARY_FILE, index=False)
 
     return MECHANISM_SUMMARY_FILE
+
+
+def get_car_direction(row):
+    if row["status"] != "success" or pd.isna(row["car_value"]):
+        return "N/A"
+    if row["car_value"] > 0:
+        return "Positive"
+    if row["car_value"] < 0:
+        return "Negative"
+    return "Neutral"
+
+
+def write_dashboard_data():
+    event_results = pd.read_csv(RESULTS_FILE)
+    event_results["car_value"] = pd.to_numeric(
+        event_results["car_value"],
+        errors="coerce",
+    )
+    event_results["car_percent"] = event_results["car_value"] * 100
+    event_results["car_direction"] = event_results.apply(get_car_direction, axis=1)
+
+    success_mask = event_results["status"] == "success"
+    event_results["report_path"] = ""
+    event_results["figure_path"] = ""
+    event_results["event_window_path"] = ""
+    event_results.loc[success_mask, "report_path"] = (
+        "reports/" + event_results.loc[success_mask, "event_id"] + "_report.md"
+    )
+    event_results.loc[success_mask, "figure_path"] = (
+        "figures/"
+        + event_results.loc[success_mask, "event_id"]
+        + "_abnormal_returns.png"
+    )
+    event_results.loc[success_mask, "event_window_path"] = (
+        "results/event_windows/"
+        + event_results.loc[success_mask, "event_id"]
+        + "_event_window_data.csv"
+    )
+
+    dashboard_data = event_results[
+        [
+            "event_id",
+            "event_name",
+            "event_date",
+            "mechanism",
+            "event_type",
+            "asset",
+            "benchmark",
+            "car_value",
+            "car_percent",
+            "car_direction",
+            "status",
+            "report_path",
+            "figure_path",
+            "event_window_path",
+        ]
+    ]
+    dashboard_data.to_csv(DASHBOARD_DATA_FILE, index=False)
+
+    return DASHBOARD_DATA_FILE
+
+
+def format_event_summary(row):
+    if row is None:
+        return "N/A"
+    return (
+        f"{row['event_name']} ({row['event_id']}): "
+        f"{row['car_percent']:.2f}% benchmark-adjusted abnormal CAR"
+    )
+
+
+def write_executive_summary():
+    event_results = pd.read_csv(RESULTS_FILE)
+    mechanism_summary = pd.read_csv(MECHANISM_SUMMARY_FILE)
+
+    event_results["car_value"] = pd.to_numeric(
+        event_results["car_value"],
+        errors="coerce",
+    )
+    event_results["car_percent"] = event_results["car_value"] * 100
+
+    total_events = len(event_results)
+    successful_events = event_results[event_results["status"] == "success"].copy()
+    failed_events = event_results[event_results["status"] == "failed"].copy()
+
+    strongest_positive = None
+    positive_events = successful_events[successful_events["car_value"] > 0]
+    if not positive_events.empty:
+        strongest_positive = positive_events.loc[positive_events["car_value"].idxmax()]
+
+    strongest_negative = None
+    negative_events = successful_events[successful_events["car_value"] < 0]
+    if not negative_events.empty:
+        strongest_negative = negative_events.loc[negative_events["car_value"].idxmin()]
+
+    mechanism_table_lines = [
+        "| Mechanism | Events | Successful | Failed | Mean CAR | Min CAR | Max CAR |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+    ]
+    for _, row in mechanism_summary.iterrows():
+        mechanism_table_lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(row["mechanism"]),
+                    str(row["event_count"]),
+                    str(row["successful_event_count"]),
+                    str(row["failed_event_count"]),
+                    f"{row['mean_car_value']:.4f}",
+                    f"{row['min_car_value']:.4f}",
+                    f"{row['max_car_value']:.4f}",
+                ]
+            )
+            + " |"
+        )
+    mechanism_table = "\n".join(mechanism_table_lines)
+
+    summary = f"""# Taiwan Geopolitical Risk Event Study Engine - Executive Summary
+
+## Overview
+
+This batch run analyzed Taiwan-related geopolitical and strategic-importance events using the current event-study engine.
+
+| Metric | Count |
+|---|---:|
+| Events analyzed | {total_events} |
+| Successful events | {len(successful_events)} |
+| Failed events | {len(failed_events)} |
+
+## Strongest Event Results
+
+- Strongest positive event: {format_event_summary(strongest_positive)}
+- Strongest negative event: {format_event_summary(strongest_negative)}
+
+## Mechanism-Level Summary
+
+{mechanism_table}
+
+## Short Interpretation
+
+The current results summarize benchmark-adjusted abnormal CAR by event and mechanism. Positive values indicate that the selected asset outperformed its benchmark during the event window, while negative values indicate underperformance relative to the benchmark. These outputs are intended to support analytical review, dashboard development, and business-facing discussion.
+
+## Important Note
+
+This summary is for academic and educational analytics purposes only. It is not investment advice, policy advice, or an official publication.
+"""
+
+    EXECUTIVE_SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
+    EXECUTIVE_SUMMARY_FILE.write_text(summary)
+
+    return EXECUTIVE_SUMMARY_FILE

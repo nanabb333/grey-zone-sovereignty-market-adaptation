@@ -21,6 +21,8 @@
 
 - results/event_results.csv
 - results/mechanism_summary.csv
+- results/dashboard_data.csv
+- results/executive_summary.md
 - results/event_windows/
 - reports/
 - figures/
