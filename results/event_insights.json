@@ -1,0 +1,97 @@
+{
+  "source_files": [
+    "results/dashboard_data.csv",
+    "results/mechanism_summary.csv"
+  ],
+  "method": "deterministic_rule_based_insight_generator",
+  "rules": [
+    "Positive reaction despite Risk classification: mechanism == Risk and car_value > 0",
+    "Negative reaction despite Strategic Importance classification: mechanism == Strategic_Importance and car_value < 0",
+    "Reaction stronger than historical average: abs(car_value) > abs(mechanism_mean_car)",
+    "Reaction weaker than historical average: abs(car_value) < abs(mechanism_mean_car)"
+  ],
+  "insight_count": 5,
+  "insights": [
+    {
+      "event_id": "E001",
+      "event_name": "Pelosi Visit",
+      "event_date": "2022-08-02",
+      "mechanism": "Risk",
+      "category": "Positive reaction despite Risk classification",
+      "title": "Positive abnormal CAR for a Risk event",
+      "explanation": "Pelosi Visit is classified as Risk, but the selected asset outperformed its benchmark during the event window.",
+      "evidence": {
+        "rule": "mechanism == Risk and car_value > 0",
+        "car_value": 0.0044332006595363,
+        "car_percent": "0.44%"
+      },
+      "use_note": "Rule-based educational insight. Not investment advice."
+    },
+    {
+      "event_id": "E001",
+      "event_name": "Pelosi Visit",
+      "event_date": "2022-08-02",
+      "mechanism": "Risk",
+      "category": "Reaction stronger than historical average",
+      "title": "Event reaction exceeds mechanism average magnitude",
+      "explanation": "Pelosi Visit had a larger abnormal-CAR magnitude than the current Risk mechanism average.",
+      "evidence": {
+        "rule": "abs(car_value) > abs(mechanism_mean_car)",
+        "car_value": 0.0044332006595363,
+        "car_percent": "0.44%",
+        "mechanism_mean_car": -0.002511988663900134,
+        "mechanism_mean_percent": "-0.25%"
+      },
+      "use_note": "Rule-based educational insight. Not investment advice."
+    },
+    {
+      "event_id": "E002",
+      "event_name": "Joint Sword 2023",
+      "event_date": "2023-04-08",
+      "mechanism": "Risk",
+      "category": "Reaction stronger than historical average",
+      "title": "Event reaction exceeds mechanism average magnitude",
+      "explanation": "Joint Sword 2023 had a larger abnormal-CAR magnitude than the current Risk mechanism average.",
+      "evidence": {
+        "rule": "abs(car_value) > abs(mechanism_mean_car)",
+        "car_value": -0.0065243053328469,
+        "car_percent": "-0.65%",
+        "mechanism_mean_car": -0.002511988663900134,
+        "mechanism_mean_percent": "-0.25%"
+      },
+      "use_note": "Rule-based educational insight. Not investment advice."
+    },
+    {
+      "event_id": "E003",
+      "event_name": "Joint Sword 2024A",
+      "event_date": "2024-05-23",
+      "mechanism": "Risk",
+      "category": "Reaction stronger than historical average",
+      "title": "Event reaction exceeds mechanism average magnitude",
+      "explanation": "Joint Sword 2024A had a larger abnormal-CAR magnitude than the current Risk mechanism average.",
+      "evidence": {
+        "rule": "abs(car_value) > abs(mechanism_mean_car)",
+        "car_value": -0.0054448613183898,
+        "car_percent": "-0.54%",
+        "mechanism_mean_car": -0.002511988663900134,
+        "mechanism_mean_percent": "-0.25%"
+      },
+      "use_note": "Rule-based educational insight. Not investment advice."
+    },
+    {
+      "event_id": "E004",
+      "event_name": "NVIDIA Taiwan AI Factory",
+      "event_date": "2025-05-19",
+      "mechanism": "Strategic_Importance",
+      "category": "Negative reaction despite Strategic Importance classification",
+      "title": "Negative abnormal CAR for a Strategic_Importance event",
+      "explanation": "NVIDIA Taiwan AI Factory is classified as Strategic_Importance, but the selected asset underperformed its benchmark during the event window.",
+      "evidence": {
+        "rule": "mechanism == Strategic_Importance and car_value < 0",
+        "car_value": -0.0176057315529649,
+        "car_percent": "-1.76%"
+      },
+      "use_note": "Rule-based educational insight. Not investment advice."
+    }
+  ]
+}

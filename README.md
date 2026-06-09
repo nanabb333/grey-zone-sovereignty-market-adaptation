@@ -192,7 +192,7 @@ These files are designed to support a future Repo 3 dashboard or analytics inter
 
 Repo 3 adds the first runnable dashboard layer on top of the Repo 2 analytics engine.
 
-The dashboard turns structured event-study outputs into a single-page decision-support view for a geopolitical risk analyst. The current MVP displays batch KPIs, latest event context, the generated executive summary, and a placeholder AI Insight Panel.
+The dashboard turns structured event-study outputs into a single-page decision-support view for a geopolitical risk analyst. The current MVP displays batch KPIs, latest event context, the generated executive summary, and deterministic rule-based insights.
 
 Current MVP status:
 
@@ -200,8 +200,8 @@ Current MVP status:
 - KPI cards load from `results/dashboard_data.csv`
 - latest event view loads from `results/dashboard_data.csv`
 - executive summary renders from `results/executive_summary.md`
-- AI Insight Panel is a placeholder only
-- no AI integration, forecasting, trading recommendation, or complex filtering is included yet
+- AI Insight Panel displays rule-based educational insights from `results/event_insights.json`
+- no LLM integration, forecasting, trading recommendation, or complex filtering is included yet
 
 Repo 3 consumes these Repo 2 outputs:
 
@@ -210,6 +210,38 @@ results/dashboard_data.csv
 results/executive_summary.md
 results/mechanism_summary.csv
 ```
+
+## Rule-Based Insight Generator
+
+Repo 3 includes a deterministic insight generator that creates explainable dashboard insights without using any LLM APIs.
+
+The generator reads:
+
+```text
+results/dashboard_data.csv
+results/mechanism_summary.csv
+```
+
+It writes:
+
+```text
+results/event_insights.json
+```
+
+Run it from the repository root:
+
+```bash
+python3 scripts/generate_event_insights.py
+```
+
+The current rules identify:
+
+- positive reaction despite `Risk` classification
+- negative reaction despite `Strategic_Importance` classification
+- reaction stronger than the mechanism average
+- reaction weaker than the mechanism average
+
+The output is deterministic, explainable, and intended for educational and research use only. It does not use OpenAI, Claude, or any external API. It does not provide forecasts, trading recommendations, investment advice, policy advice, or official conclusions.
 
 Run the dashboard locally from the repository root:
 

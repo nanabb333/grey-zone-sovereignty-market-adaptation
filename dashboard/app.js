@@ -1,5 +1,6 @@
 const dashboardDataPath = "../results/dashboard_data.csv";
 const executiveSummaryPath = "../results/executive_summary.md";
+const eventInsightsPath = "../results/event_insights.json";
 
 const formatPercent = (value) => {
   const number = Number(value);
@@ -188,28 +189,72 @@ const renderMarkdown = (markdown) => {
   return html;
 };
 
+const renderInsights = (insightData) => {
+  const insightCards = document.getElementById("insightCards");
+  const insights = insightData.insights ?? [];
+
+  if (!insights.length) {
+    insightCards.innerHTML =
+      '<div class="insight-card"><p class="insight-title">No rule-based insights generated.</p></div>';
+    return;
+  }
+
+  insightCards.innerHTML = insights
+    .map(
+      (insight) => `
+        <article class="insight-card">
+          <p class="insight-category">${insight.category}</p>
+          <h3>${insight.title}</h3>
+          <p class="insight-event">${insight.event_name} (${insight.event_id})</p>
+          <p>${insight.explanation}</p>
+          <dl class="evidence-list">
+            <div>
+              <dt>Rule</dt>
+              <dd>${insight.evidence.rule}</dd>
+            </div>
+            <div>
+              <dt>CAR</dt>
+              <dd>${insight.evidence.car_percent}</dd>
+            </div>
+            ${
+              insight.evidence.mechanism_mean_percent
+                ? `<div><dt>Mechanism Avg.</dt><dd>${insight.evidence.mechanism_mean_percent}</dd></div>`
+                : ""
+            }
+          </dl>
+          <p class="insight-note">${insight.use_note}</p>
+        </article>
+      `,
+    )
+    .join("");
+};
+
 const loadDashboard = async () => {
   try {
-    const [csvResponse, summaryResponse] = await Promise.all([
+    const [csvResponse, summaryResponse, insightsResponse] = await Promise.all([
       fetch(dashboardDataPath),
       fetch(executiveSummaryPath),
+      fetch(eventInsightsPath),
     ]);
 
-    if (!csvResponse.ok || !summaryResponse.ok) {
+    if (!csvResponse.ok || !summaryResponse.ok || !insightsResponse.ok) {
       throw new Error("Unable to load Repo 2 dashboard outputs.");
     }
 
     const events = parseCsv(await csvResponse.text());
     const executiveSummary = await summaryResponse.text();
+    const insightData = await insightsResponse.json();
 
     renderKpiCards(events);
     renderLatestEvent(events);
     document.getElementById("executiveSummary").innerHTML =
       renderMarkdown(executiveSummary);
+    renderInsights(insightData);
   } catch (error) {
     document.getElementById("kpiCards").innerHTML =
       `<div class="kpi-card"><p class="kpi-value">Data unavailable</p><p class="kpi-note">${error.message}</p></div>`;
     document.getElementById("executiveSummary").textContent = error.message;
+    document.getElementById("insightCards").textContent = error.message;
   }
 };
 

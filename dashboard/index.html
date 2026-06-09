@@ -50,19 +50,16 @@
       <section class="panel ai-panel">
         <div class="section-heading">
           <p class="eyebrow">AI Insight Panel</p>
-          <h2>Interpretation Placeholder</h2>
+          <h2>Rule-Based Insights</h2>
         </div>
         <div class="ai-placeholder">
           <p>
-            AI integration is not enabled in this MVP skeleton. Future versions
-            will generate analyst-reviewed explanations from dashboard data,
-            mechanism summaries, and executive context.
+            These insights are generated with deterministic rules from Repo 2
+            outputs. No LLM APIs, forecasting, or recommendations are used.
           </p>
-          <ul>
-            <li>Event explanation</li>
-            <li>Mechanism interpretation</li>
-            <li>Historical comparison</li>
-          </ul>
+        </div>
+        <div id="insightCards" class="insight-list" aria-live="polite">
+          Loading rule-based insights...
         </div>
       </section>
     </main>

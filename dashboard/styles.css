@@ -234,6 +234,64 @@ body {
   padding-left: 20px;
 }
 
+.insight-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.insight-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.insight-card h3 {
+  margin: 4px 0 8px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.insight-category,
+.insight-event,
+.insight-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.insight-note {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.evidence-list {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+}
+
+.evidence-list div {
+  padding: 10px;
+  border-radius: 8px;
+  background: #eef6f5;
+}
+
+.evidence-list dt {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.evidence-list dd {
+  margin: 2px 0 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 960px) {
   .app-header,
   .dashboard-shell {
