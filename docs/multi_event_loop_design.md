@@ -1,5 +1,10 @@
 # Multi-Event Loop Design
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 V2 needs a loop architecture because the engine is moving from one-event processing to batch event processing.

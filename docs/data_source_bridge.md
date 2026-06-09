@@ -1,5 +1,10 @@
 # Data Source Bridge
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 Repo 2 reuses cleaned market data produced during Repo 1.

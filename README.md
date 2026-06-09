@@ -1,5 +1,13 @@
 # Taiwan Geopolitical Risk Event Study Engine
 
+## Academic Research Notice
+
+This repository contains research-oriented analytics tools, datasets, workflow documentation, and supporting materials developed for academic and educational purposes.
+
+Any research notes, coding schemas, event classifications, findings summaries, or supporting documents should be treated as preliminary academic materials unless explicitly identified as peer-reviewed or formally published.
+
+Nothing in this repository should be interpreted as investment advice, policy advice, or an official publication.
+
 ## One-Sentence Description
 
 An automated analytics engine that measures financial market responses to Taiwan-related geopolitical events using event-study methodology.

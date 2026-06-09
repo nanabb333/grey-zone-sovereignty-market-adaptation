@@ -1,5 +1,10 @@
 # Pelosi Visit Validation Diagnostic
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Repo 1 Result
 
 The reported Repo 1 Pelosi Visit TSMC value of approximately +2.59% comes from the raw return event-window output in `output/pelosi_event_window_v2.csv`.

@@ -1,5 +1,10 @@
 # Market Data Contract
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 This document defines the expected market data structure for the Taiwan Geopolitical Risk Event Study Engine.

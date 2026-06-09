@@ -1,5 +1,10 @@
 # Phase 7 Portfolio Analytics Layer
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Purpose
 
 Phase 7 adds a portfolio-level analytics output to Repo 2.

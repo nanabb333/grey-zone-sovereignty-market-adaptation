@@ -1,5 +1,10 @@
 # V2 Refactor Plan
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 This document translates the V2 architecture into a safe implementation plan before changing code.

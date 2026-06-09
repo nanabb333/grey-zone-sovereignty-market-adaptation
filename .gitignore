@@ -37,3 +37,28 @@ README_REPO1_BACKUP.md
 
 # Unpublished manuscript files
 paper/*.pdf
+
+# Private research notes and manuscript-development docs
+docs/RELEASE_NOTES_v1.0.md
+docs/china_sanctions_case_note.md
+docs/chips_act_tsmc_supply_chain_case_note.md
+docs/cross_event_findings.md
+docs/events_v1_coding_notes.md
+docs/huawei_sanctions_case_note.md
+docs/joint_sword_case_note.md
+docs/lai_inauguration_case_note.md
+docs/literature_matrix.md
+docs/main_findings_v1.md
+docs/nvidia_taiwan_ai_factory_case_note.md
+docs/pelosi_visit_case_note.md
+docs/preliminary_findings.md
+docs/taiwan_cds_geopolitical_risk_case_note.md
+docs/taiwan_geoeconomics_strategic_investment_note.md
+docs/taiwan_grey_zone_sovereignty_note.md
+docs/taiwan_recognition_constructivism_note.md
+docs/taiwan_strait_crisis_timeline.md
+docs/theory_revision_notes.md
+docs/tsmc_investment_case_note.md
+docs/twse_geopolitical_risk_market_reaction_case_note.md
+docs/us_semiconductor_export_controls_case_note.md
+docs/usd_twd_geopolitical_risk_case_note.md

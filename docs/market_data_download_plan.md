@@ -1,5 +1,10 @@
 # Market Data Download Plan
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Purpose
 
 This plan explains how to collect the first raw market dataset for event-study analysis.

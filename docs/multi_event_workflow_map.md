@@ -1,5 +1,10 @@
 # Multi-Event Workflow Map
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 This document maps the transition from the V1 single-event workflow to the V2 multi-event workflow for the Taiwan Geopolitical Risk Event Study Engine.

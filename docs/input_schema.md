@@ -1,5 +1,10 @@
 # Input Schema
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## 1. Purpose
 
 events/events.csv defines the event-level inputs for the Taiwan Geopolitical Risk Event Study Engine.

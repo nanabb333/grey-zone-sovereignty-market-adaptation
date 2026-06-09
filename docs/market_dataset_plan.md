@@ -1,5 +1,10 @@
 # Market Dataset Plan
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Purpose
 
 The market dataset will measure how Taiwan-related geopolitical and strategic events affect financial markets.

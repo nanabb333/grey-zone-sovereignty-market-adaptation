@@ -1,5 +1,10 @@
 # Repo 2 Release Notes - V1
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Release Date
 
 2026-06-08

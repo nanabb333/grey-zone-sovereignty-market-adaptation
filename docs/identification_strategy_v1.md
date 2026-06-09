@@ -1,5 +1,10 @@
 # Identification Strategy V1
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Purpose
 
 This memo assesses whether the observed market reactions are truly Taiwan-specific geopolitical effects.

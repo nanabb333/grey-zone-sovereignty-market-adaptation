@@ -1,5 +1,10 @@
 # Single Event Engine Specification
 
+> Academic Research Notice:
+> This document is provided for educational and research reference purposes only.
+> It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
+> It should not be treated as a peer-reviewed publication.
+
 ## Purpose
 
 The first version of the Taiwan Geopolitical Risk Event Study Engine should process one event from start to finish.
