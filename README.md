@@ -1,4 +1,4 @@
-# Taiwan Geopolitical Risk Event Study Engine
+# Taiwan Geopolitical Risk Event Research Engine
 
 ## Academic Research Notice
 
