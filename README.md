@@ -1,4 +1,4 @@
-# Taiwan Geopolitical Risk Event Research Engine
+# Taiwan Geopolitical Risk Analytics & Dashboard
 
 ## Academic Research Notice
 
@@ -202,10 +202,10 @@ pip install -r requirements.txt
 Run the batch engine:
 
 ```bash
-MPLCONFIGDIR=/private/tmp/matplotlib-cache /Users/cjy/miniconda3/bin/python3 scripts/run_event_study.py
+python3 scripts/run_event_study.py
 ```
 
-The `MPLCONFIGDIR` setting gives Matplotlib a writable cache location on this machine.
+If Matplotlib needs a writable cache location on your machine, set `MPLCONFIGDIR` before running the engine.
 
 ## Current Metric Definition
 
@@ -278,7 +278,7 @@ The dashboard turns structured event-study outputs into a single-page decision-s
 
 Current Dashboard V1 status:
 
-- single-page dashboard skeleton is runnable locally
+- Dashboard V1 is complete and runnable locally
 - KPI cards load from `results/dashboard_data.csv`
 - latest event view loads from `results/dashboard_data.csv`
 - executive summary renders from `results/executive_summary.md`
@@ -286,6 +286,8 @@ Current Dashboard V1 status:
 - historical comparison loads from `results/historical_comparison.json`
 - executive brief loads from `results/executive_brief.json`
 - LLM-ready context summary loads from `results/llm_context.json`
+- rule-based intelligence layer is complete
+- portfolio documentation is complete
 - no LLM integration, forecasting, trading recommendation, or complex filtering is included
 
 Repo 3 consumes these Repo 2 outputs:
@@ -446,9 +448,14 @@ Additional portfolio-facing documentation:
 
 ## Roadmap
 
-- Raw CAR + abnormal CAR outputs
-- Richer validation fields
-- Batch report index
-- Dashboard development
-- AI-assisted event classification
-- Agent-assisted analyst review
+Completed:
+
+- Dashboard V1
+- Rule-based intelligence layer
+- Portfolio documentation
+
+Future roadmap:
+
+- Public demo deployment
+- Analyst-reviewed LLM explanation layer
+- Dashboard filters and event explorer
