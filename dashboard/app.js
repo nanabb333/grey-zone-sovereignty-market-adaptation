@@ -68,8 +68,8 @@ const renderKpiCards = (events) => {
     },
     {
       label: "Dashboard Status",
-      value: "MVP",
-      note: "AI panel placeholder only",
+      value: "V1",
+      note: "Deterministic intelligence layer",
     },
   ];
 

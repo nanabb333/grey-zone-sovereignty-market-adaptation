@@ -10,7 +10,62 @@ Nothing in this repository should be interpreted as investment advice, policy ad
 
 ## One-Sentence Description
 
-An automated analytics engine that measures financial market responses to Taiwan-related geopolitical events using event-study methodology.
+An automated event-study analytics engine and dashboard product that measures financial market responses to Taiwan-related geopolitical events and turns the outputs into decision-support insights.
+
+## 30-Second Overview
+
+This repository demonstrates a three-stage Business Analytics workflow:
+
+```text
+Repo 1: Taiwan geopolitical risk research
+↓
+Repo 2: Automated event-study analytics engine
+↓
+Repo 3: Dashboard-ready decision-support product
+```
+
+Current portfolio-ready capabilities:
+
+- multi-event event-study engine
+- benchmark-adjusted abnormal CAR calculation
+- dashboard-ready CSV and JSON outputs
+- single-page geopolitical risk dashboard
+- deterministic rule-based insights
+- historical event comparison metadata
+- executive brief generation
+- LLM-ready context layer for future analyst-reviewed AI use
+
+No OpenAI, Claude, Gemini, external APIs, forecasting, trading recommendations, or investment advice are used.
+
+## How The Repositories Connect
+
+Repo 1 is the research foundation.
+
+Repo 2 is the analytics engine built from that research workflow.
+
+Repo 3 is the dashboard product built from Repo 2 outputs.
+
+```text
+Repo 1
+Grey-Zone Sovereignty and Market Adaptation
+Research Capability
+↓
+Repo 2
+Taiwan Geopolitical Risk Event Study Engine
+Analytics Engineering Capability
+↓
+Repo 3
+AI Geopolitical Risk Dashboard
+Analytics Product Capability
+```
+
+The portfolio narrative is:
+
+```text
+Research
+→ Analytics
+→ Product
+```
 
 ## Business Problem
 
@@ -25,6 +80,33 @@ This project transforms a manual Taiwan geopolitical-risk event study into an au
 The engine reads standardised event inputs, loads market data, calculates returns, calculates benchmark-adjusted abnormal returns, calculates cumulative abnormal return (CAR), and generates reusable CSV, figure, and Markdown report outputs.
 
 Repo 2 is designed as an analytics product, not a research paper.
+
+## Architecture Overview
+
+```text
+events/events.csv
+data/market_data.csv
+        ↓
+Repo 2 Event Study Engine
+        ↓
+event_results.csv
+dashboard_data.csv
+mechanism_summary.csv
+executive_summary.md
+        ↓
+Repo 3 Dashboard Intelligence Layer
+        ↓
+event_insights.json
+historical_comparison.json
+executive_brief.json
+llm_context.json
+        ↓
+Repo 3 Dashboard V1
+```
+
+Repo 2 owns the event-study calculations.
+
+Repo 3 owns the dashboard, deterministic interpretation layer, and portfolio-ready presentation.
 
 ## Current Status
 
@@ -188,20 +270,23 @@ V3 adds two business-facing outputs without changing the core CAR calculation:
 
 These files are designed to support a future Repo 3 dashboard or analytics interface.
 
-## Repo 3: AI-Assisted Geopolitical Risk Dashboard
+## Repo 3: AI-Ready Geopolitical Risk Dashboard
 
 Repo 3 adds the first runnable dashboard layer on top of the Repo 2 analytics engine.
 
-The dashboard turns structured event-study outputs into a single-page decision-support view for a geopolitical risk analyst. The current MVP displays batch KPIs, latest event context, the generated executive summary, and deterministic rule-based insights.
+The dashboard turns structured event-study outputs into a single-page decision-support view for a geopolitical risk analyst. Dashboard V1 displays batch KPIs, latest event context, the generated executive summary, deterministic rule-based insights, historical comparisons, an executive brief, and an intelligence overview.
 
-Current MVP status:
+Current Dashboard V1 status:
 
 - single-page dashboard skeleton is runnable locally
 - KPI cards load from `results/dashboard_data.csv`
 - latest event view loads from `results/dashboard_data.csv`
 - executive summary renders from `results/executive_summary.md`
-- AI Insight Panel displays rule-based educational insights from `results/event_insights.json`
-- no LLM integration, forecasting, trading recommendation, or complex filtering is included yet
+- Insight Panel displays rule-based educational insights from `results/event_insights.json`
+- historical comparison loads from `results/historical_comparison.json`
+- executive brief loads from `results/executive_brief.json`
+- LLM-ready context summary loads from `results/llm_context.json`
+- no LLM integration, forecasting, trading recommendation, or complex filtering is included
 
 Repo 3 consumes these Repo 2 outputs:
 
@@ -210,6 +295,68 @@ results/dashboard_data.csv
 results/executive_summary.md
 results/mechanism_summary.csv
 ```
+
+Repo 3 generated intelligence outputs:
+
+```text
+results/event_insights.json
+results/historical_comparison.json
+results/executive_brief.json
+results/llm_context.json
+```
+
+## Repo 2 to Repo 3 Workflow
+
+```text
+Run Repo 2 engine
+↓
+Generate dashboard_data.csv and mechanism_summary.csv
+↓
+Generate rule-based event insights
+↓
+Generate historical comparisons, executive brief, and LLM-ready context
+↓
+Open Dashboard V1
+↓
+Review metrics, event context, executive brief, and deterministic insights
+```
+
+Run the dashboard intelligence generators:
+
+```bash
+python3 scripts/generate_event_insights.py
+python3 scripts/generate_dashboard_intelligence.py
+```
+
+## Feature Summary
+
+| Feature | Output / Location | Purpose |
+|---|---|---|
+| KPI cards | Dashboard V1 | Summarize events, failures, and strongest reactions |
+| Latest Event View | Dashboard V1 | Show current event metadata and CAR direction |
+| Executive Summary | `results/executive_summary.md` | Non-technical batch summary |
+| Rule-Based Insights | `results/event_insights.json` | Deterministic insight cards |
+| Historical Comparison | `results/historical_comparison.json` | Compare event CAR with mechanism averages |
+| Executive Brief | `results/executive_brief.json` | Deterministic analyst-style summary |
+| LLM-Ready Context | `results/llm_context.json` | Structured future AI context with usage constraints |
+
+## Dashboard Description
+
+Dashboard V1 is a single-page portfolio dashboard for geopolitical risk analysis.
+
+It is designed to help an analyst move from event-study output files to a stakeholder-ready view without manual inspection of every CSV, JSON, and Markdown artifact.
+
+The dashboard is intentionally deterministic in this version. It supports explainability and analyst review rather than automated decision-making.
+
+## Dashboard Screenshots
+
+Executive dashboard:
+
+![Dashboard Home](docs/screenshots/dashboard_home.png)
+
+Dashboard intelligence layer:
+
+![Dashboard Intelligence](docs/screenshots/dashboard_intelligence.png)
 
 ## Rule-Based Insight Generator
 
@@ -243,6 +390,26 @@ The current rules identify:
 
 The output is deterministic, explainable, and intended for educational and research use only. It does not use OpenAI, Claude, or any external API. It does not provide forecasts, trading recommendations, investment advice, policy advice, or official conclusions.
 
+## Future AI Roadmap
+
+Future AI work may use `results/llm_context.json` as structured context for analyst-reviewed explanations.
+
+Planned AI direction:
+
+- event explanation drafts
+- mechanism interpretation drafts
+- caveat checklists
+- executive brief drafting
+- analyst-editable insight text
+
+Guardrails:
+
+- use only structured project outputs
+- clearly label generated text as draft interpretation
+- avoid forecasting
+- avoid trading recommendations
+- avoid investment or policy advice
+
 Run the dashboard locally from the repository root:
 
 ```bash
@@ -268,20 +435,14 @@ http://127.0.0.1:8000/dashboard/
 - Validation and Metric Definition
 - Research-to-Product Transformation
 
-## Connection to Repo 1
+## Portfolio Documentation
 
-Repo 1 was the manual research project:
+Additional portfolio-facing documentation:
 
-**Grey-Zone Sovereignty and Market Adaptation: Financial Responses to Taiwan-Related Geopolitical Shocks**
-
-Repo 1 developed the event classifications, market data workflow, abnormal-return calculations, CAR outputs, figures, and research interpretation.
-
-Repo 2 turns that manual event-study workflow into an automated analytics engine.
-
-```text
-Repo 1 = research method and evidence trail
-Repo 2 = repeatable analytics engine
-```
+- [Portfolio Positioning](docs/portfolio_positioning.md)
+- [Research to Product Story](docs/research_to_product_story.md)
+- [Recruiter Summary](docs/recruiter_summary.md)
+- [Repo 3 Case Study](docs/repo3_case_study.md)
 
 ## Roadmap
 

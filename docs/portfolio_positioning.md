@@ -5,163 +5,156 @@
 > It may contain preliminary analysis, working assumptions, draft frameworks, or evolving interpretations.
 > It should not be treated as a peer-reviewed publication.
 
-## Project Name
+## Portfolio Narrative
 
-Taiwan Geopolitical Risk Event Study Engine
+The Taiwan Geopolitical Risk portfolio shows a progression from research capability to analytics engineering capability to analytics product capability.
 
-## One-Sentence Description
+Together, the three repositories demonstrate how an International Relations research question can become a reproducible analytics engine and then a dashboard-ready decision-support product.
 
-An automated analytics engine that measures how Taiwan-related geopolitical events affect financial markets using event-study methodology.
-
-## Business Problem
-
-Geopolitical shocks can affect markets quickly, but manual analysis is slow, inconsistent, and difficult to repeat across events.
-
-Analysts need a repeatable workflow that can turn an event date, asset, benchmark, and event window into structured outputs for decision support.
-
-## Analytics Problem
-
-The project converts a manual event-study process into a standardized pipeline:
-
-- define an event
-- load market data
-- calculate returns
-- calculate abnormal returns
-- calculate CAR
-- save results
-- generate figures
-- generate reports
-
-The analytics challenge is not only calculating CAR. The challenge is designing a reliable workflow that moves from input data to reusable outputs with minimal manual intervention.
-
-## Inputs
-
-Current V1 inputs:
-
-- `events/events.csv`
-- `data/market_data.csv`
-
-The event input defines:
-
-- event ID
-- event name
-- event date
-- theoretical mechanism
-- event type
-- asset
-- benchmark
-- event window
-
-The market data input provides standardized asset and benchmark price columns.
-
-## Processing Workflow
+The portfolio is best understood as:
 
 ```text
-Input event
-↓
-Load market data
-↓
-Calculate returns
-↓
-Calculate abnormal returns
-↓
-Calculate CAR
-↓
-Save event-level results
-↓
-Save event-window data
-↓
-Generate abnormal return figure
-↓
-Generate Markdown report
+Research
+→ Analytics
+→ Product
 ```
 
-## Outputs
+## Repo 1: Research Capability
 
-Current V1 outputs:
+Repo 1 represents the original academic research foundation:
 
-- `results/event_results.csv`
-- `results/event_window_data.csv`
-- `figures/E001_abnormal_returns.png`
-- `reports/E001_report.md`
+```text
+Grey-Zone Sovereignty and Market Adaptation:
+Financial Responses to Taiwan-Related Geopolitical Shocks
+```
 
-These outputs support both validation and analyst review.
+Capability demonstrated:
 
-## Skills Demonstrated
+- research design
+- geopolitical-risk framing
+- event-study methodology
+- Taiwan political-risk domain knowledge
+- market-response interpretation
+- academic argument development
 
-- Data Analytics
-- Workflow Automation
-- Event Study Methodology
-- Financial Data Processing
-- Python
-- Research Automation
-- Report Generation
-- Data Validation
-- Analytics Product Design
-- Reproducible Analysis
+Portfolio signal:
 
-## Why This Project Is Different
+Repo 1 shows that the analyst can define a complex research problem, build a theory-informed event sample, and interpret financial market reactions in a geopolitical context.
 
-Traditional academic paper:
+This is the domain and methodology layer of the portfolio.
 
-- focuses on argument, literature, and interpretation
-- often contains static tables and figures
-- may rely on manual calculations
+## Repo 2: Analytics Engineering Capability
 
-Manual event study:
+Repo 2 transforms the manual Repo 1 workflow into an automated event-study engine.
 
-- can answer one research question
-- is useful but hard to repeat
-- often mixes data cleaning, calculations, charting, and interpretation
+Capability demonstrated:
 
-Automated event-study engine:
+- workflow automation
+- standardized data inputs
+- multi-event batch processing
+- abnormal-return calculation
+- CAR calculation
+- output generation
+- validation and metric definition
+- reproducible analytics pipeline design
 
-- separates inputs, processing modules, and outputs
-- allows the same workflow to be rerun
-- produces structured CSVs, figures, and reports
-- turns research methodology into an analytics product
+Portfolio signal:
 
-Repo 1 proved the research method.
+Repo 2 shows that the analyst can turn a research method into a reusable analytics system with structured inputs, processing modules, outputs, and validation documentation.
 
-Repo 2 packages the method into a repeatable analytics workflow.
+This is the analytics engineering layer of the portfolio.
 
-## Target Audience
+## Repo 3: Analytics Product Capability
+
+Repo 3 turns Repo 2 outputs into an AI-ready geopolitical risk dashboard.
+
+Capability demonstrated:
+
+- dashboard product design
+- business-facing analytics communication
+- KPI and executive-summary design
+- deterministic rule-based insight generation
+- historical comparison metadata
+- LLM-ready context architecture
+- portfolio-ready product packaging
+
+Portfolio signal:
+
+Repo 3 shows that the analyst can translate structured analytics outputs into a decision-support product for a geopolitical risk analyst.
+
+This is the analytics product layer of the portfolio.
+
+## End-to-End Portfolio Story
+
+```text
+Repo 1
+Research Capability
+↓
+Repo 2
+Analytics Engineering Capability
+↓
+Repo 3
+Analytics Product Capability
+```
+
+This sequence is the core portfolio story:
+
+```text
+research question
+→ analytical method
+→ automated engine
+→ dashboard product
+→ decision-support insights
+```
+
+## Target Audiences
+
+This portfolio is positioned for:
 
 - Business Analytics recruiters
-- Political Risk firms
-- Financial research teams
-- Graduate admissions committees
-- Policy analytics teams
-- Investment research teams
-- Research automation teams
+- political risk analytics teams
+- financial research teams
+- research automation roles
+- policy analytics teams
+- graduate admissions committees
 
-## Resume Bullet Example
+## Skills Demonstrated Across the Portfolio
 
-Built an automated Python event-study engine that processes Taiwan-related geopolitical events, loads standardized market data, calculates benchmark-adjusted abnormal returns and CAR, and generates CSV outputs, figures, and Markdown reports for analyst review.
+- Business Analytics
+- Political Risk Analysis
+- Financial Data Analytics
+- Event Study Methodology
+- Workflow Automation
+- Python Analytics Pipelines
+- Dashboard Product Design
+- Rule-Based Insight Generation
+- Research-to-Product Transformation
+- AI-Ready Analytics Architecture
 
-## LinkedIn Project Example
+## Resume Positioning
 
-I built the Taiwan Geopolitical Risk Event Study Engine, an analytics workflow that transforms a manual research process into an automated event-study pipeline.
+Designed a three-part Taiwan geopolitical risk analytics portfolio that transforms an academic event-study research project into an automated Python analytics engine and a dashboard-ready decision-support product with deterministic insight generation.
 
-The engine reads standardized event inputs, loads market data, calculates returns and abnormal returns, computes CAR, saves event-level and event-window outputs, generates an abnormal return figure, and produces a Markdown report.
+## LinkedIn Positioning
 
-This project demonstrates how research methodology can be turned into a reusable analytics product for political risk, financial research, and business analytics workflows.
+This project series demonstrates how geopolitical risk research can become an analytics product.
 
-## GitHub README Positioning
+Repo 1 developed the research foundation.
 
-The Taiwan Geopolitical Risk Event Study Engine is a Python-based analytics engine for studying financial market responses to Taiwan-related geopolitical shocks.
+Repo 2 automated the event-study workflow.
 
-Version 1 processes one event from start to finish:
+Repo 3 turned the outputs into a dashboard-ready decision-support interface with rule-based insights, historical comparison metadata, executive brief generation, and LLM-ready context architecture.
+
+## GitHub Positioning
+
+The portfolio should be presented as a Business Analytics and political risk analytics system rather than a standalone academic paper.
+
+The strongest framing is:
 
 ```text
-events/events.csv
-→ data/market_data.csv
-→ returns
-→ abnormal returns
-→ CAR
-→ results
-→ figure
-→ report
+Taiwan geopolitical risk research
+converted into
+automated event-study analytics
+and
+dashboard-ready decision support
 ```
-
-The project is designed as an analytics product rather than a research paper. It emphasizes workflow automation, reproducibility, and structured outputs for analyst review.
