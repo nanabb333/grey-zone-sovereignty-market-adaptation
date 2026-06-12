@@ -1,5 +1,35 @@
 # Grey-Zone Sovereignty and Market Adaptation
 
+## Portfolio Positioning
+
+This repository is the research foundation for a three-part Taiwan geopolitical risk analytics portfolio:
+
+```text
+Research → Analytics → Product
+```
+
+It examines why some Taiwan-related geopolitical shocks generate negative market reactions while others produce muted or positive abnormal returns, then connects that research design to an event-study analytics engine and dashboard-ready decision-support product.
+
+## Research Question
+
+```text
+Why do some Taiwan-related geopolitical shocks fail to generate persistent market damage despite elevated objective risk?
+```
+
+## Short Answer
+
+The findings suggest that Taiwan-related geopolitical risk does not produce uniform market damage.
+
+Risk events are negative on average. Strategic-importance events are positive on average. Repeated exposure appears associated with weaker negative reactions. This pattern is consistent with market adaptation, but it does not prove adaptation.
+
+The strongest rival explanation is anticipation: some events may have been expected and priced before the measured event window.
+
+## Why This Matters
+
+Taiwan sits at the intersection of sovereignty disputes, U.S.-China strategic competition, semiconductor supply chains, and financial market risk.
+
+For Business Analytics, Risk Analytics, Strategy Analytics, and AI Product Analytics audiences, the project shows how a complex political economy question can become a structured research design, reproducible analytics workflow, and decision-support product narrative.
+
 ## Academic Research Notice
 
 This repository contains research-oriented analytics tools, datasets, workflow documentation, and supporting materials developed for academic and educational purposes.
@@ -8,23 +38,11 @@ Any research notes, coding schemas, event classifications, findings summaries, o
 
 Nothing in this repository should be interpreted as investment advice, policy advice, or an official publication.
 
-## One-Sentence Portfolio Positioning
-
-This project turns a Taiwan geopolitical risk research question into an event-study analytics engine and dashboard-ready decision-support product.
-
-## Research Question
-
-```text
-Why do some Taiwan-related geopolitical shocks fail to generate persistent market damage despite elevated objective risk?
-```
+## Research Scope
 
 The project studies Taiwan-related geopolitical events using event-study methodology, abnormal returns, cumulative abnormal returns, and structured event coding.
 
-## Why Taiwan Grey-Zone Sovereignty Matters
-
-Taiwan sits at the intersection of sovereignty disputes, U.S.-China strategic competition, semiconductor supply chains, and financial market risk.
-
-Because Taiwan-related shocks recur, the market response may not be automatic. Investors may interpret events differently depending on whether they are novel, repeated, expected, strategically important, or already priced.
+Because Taiwan-related shocks recur, market response may not be automatic. Investors may interpret events differently depending on whether they are novel, repeated, expected, strategically important, or already priced.
 
 ## Method Overview
 
@@ -60,7 +78,7 @@ The findings are **consistent with adaptation**, especially where repeated Taiwa
 
 They are **not causal proof of adaptation**.
 
-Market reactions may reflect both objective risk and investor interpretation. Anticipation, prior pricing, broader market conditions, benchmark sensitivity, and sample limitations remain important rival explanations.
+Market reactions may reflect both objective risk and investor interpretation. Anticipation is the strongest rival explanation because some events may have been expected and priced before the measured event window. Prior pricing, broader market conditions, benchmark sensitivity, and sample limitations also remain important rival explanations.
 
 ## Key Figure
 
@@ -79,8 +97,9 @@ Start here:
 3. [Theory Framework](docs/public/02_theory_framework.md)
 4. [Research Design](docs/public/03_research_design.md)
 5. [Key Findings](docs/public/04_key_findings.md)
-6. [Discussion and Limitations](docs/public/06_discussion_and_limitations.md)
-7. [Portfolio Relevance](docs/public/07_portfolio_relevance.md)
+6. [Adaptation vs Anticipation](docs/public/05_adaptation_vs_anticipation.md)
+7. [Discussion and Limitations](docs/public/06_discussion_and_limitations.md)
+8. [Portfolio Relevance](docs/public/07_portfolio_relevance.md)
 
 For the full documentation map, see [docs/README.md](docs/README.md).
 
@@ -161,15 +180,16 @@ http://127.0.0.1:8000/dashboard/
 
 ## Skills Demonstrated
 
-- International Relations
-- Political Economy
-- Risk Analytics
-- Event Study Design
-- Financial Data Analytics
-- Analytics Workflow Design
-- Dashboard Product Thinking
-- AI-Assisted Research And Product Thinking
-- Research-to-Product Transformation
+- Business analytics
+- Risk analytics
+- Strategy analytics
+- Political economy research
+- Event-study methodology
+- Financial market interpretation
+- Reproducible analytics workflow design
+- Dashboard product thinking
+- AI product analytics
+- Executive communication
 
 ## Portfolio Documentation
 
