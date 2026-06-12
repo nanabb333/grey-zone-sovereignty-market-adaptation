@@ -1,4 +1,4 @@
-# Taiwan Geopolitical Risk Analytics & Dashboard
+# Grey-Zone Sovereignty and Market Adaptation
 
 ## Academic Research Notice
 
